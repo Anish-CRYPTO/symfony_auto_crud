@@ -27,7 +27,7 @@
                     <td>{{ auto.gewicht }}</td>
                     <td>{{ auto.prijs }}</td>
                     <td>{{ auto.voorraad }}</td>
-                    <td><a href="">details</a></td>
+                    <td><a href="{{ path('detail', {id: auto.id}) }}">details</a></td>
                     <td><a href="{{ path('update', {id: auto.id}) }}">update</a></td>
                     <td><a href="{{ path('delete', {id: auto.id}) }}">delete</a></td>
                 </tr>

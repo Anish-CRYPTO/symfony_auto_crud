@@ -74,6 +74,13 @@ class AutoController extends AbstractController
         $this->addFlash('danger', "a car has been removed");
         return $this->redirectToRoute('auto');
     }
+
+    #[Route('/auto/detail/{id}', name: 'detail')]
+    public function detail(ManagerRegistry $registry, int $id):Response
+    {
+        $car = $registry->getRepository(AUTO::class)->find($id);
+        return $this->render('auto/index.html.twig', ["autos" => $car]);
+    }
 }
 
 
